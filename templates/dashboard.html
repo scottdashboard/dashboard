@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+
+<html class="no-js"> <!--<![endif]-->
+    
+<head>
+
+    <title>Scott Insights</title>
+	<meta charset="utf-8">
+	<!--<META HTTP-EQUIV="refresh" CONTENT="10">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+	<meta name="author" content="" />
+
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,800italic,400,600,800" type="text/css">
+	<link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css" />		
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css" />	
+	<link rel="stylesheet" href="../static/js/libs/css/ui-lightness/jquery-ui-1.9.2.custom.css" type="text/css" />	
+	<link rel="stylesheet" href="../static/js/plugins/icheck/skins/minimal/blue.css" type="text/css" />
+	<link rel="stylesheet" href="../static/css/App.css" type="text/css" />
+	<link rel="stylesheet" href="../static/css/custom.css" type="text/css" />
+	
+</head>
+
+<body>
+
+<div id="wrapper">
+
+	
+	<header id="header">
+
+		<h1 id="site-logo">
+			<img src="../static/img/scottins1.png" alt="Site Logo" style="width:48%;"/>
+		</h1>	
+
+
+		<a href="javascript:;" data-toggle="collapse" data-target=".sidebar-collapse" id="sidebar-toggle" class="navbar-toggle collapsed">
+			<i class="fa fa-reorder"></i>
+		</a>
+
+	</header> 
+
+
+
+
+	<div id="sidebar-wrapper" class="collapse sidebar-collapse">
+	
+		<div id="search">
+			<form>
+				<input class="form-control input-sm" type="text" name="search" placeholder="Search..." />
+
+				<button type="submit" id="search-btn" class="btn"><i class="fa fa-search"></i></button>
+			</form>		
+		</div> <!-- #search -->
+	
+		<nav id="sidebar">		
+			
+			<ul id="main-nav" class="open-active">			
+
+				<li class="">				
+					<a href="">
+						<i class="fa fa-dashboard"></i>
+						Dashboard
+					</a>				
+				</li>
+
+				<li>
+					<a href="http://www.scottins.com" target="_blank">
+						<i class="fa fa-list-alt"></i>
+						Scott Homepage
+					</a>
+				</li>
+
+			</ul>
+					
+		</nav> <!-- #sidebar -->
+
+	</div> <!-- /#sidebar-wrapper -->
+
+
+	
+	<div id="content">		
+		
+		<div id="content-header">
+			<h1>Scott Insights</h1>
+		</div> <!-- #content-header -->	
+
+
+		<div id="content-container">
+
+			<div class="row">
+
+				<div class="col-md-12">
+
+						<h4>Scott Insights for the month of March 2016</h4>
+						Scott is pleased to provide this data-driven reports, with the goal of helping our clients to better understand their members, overall expenses as well as opportunities for improved coverage and services. The data provided in this report has been aggreated at the member and group level. Please contact Scott if you would like to learn more about the insights shown within this dashboard.
+				</div>
+			</div>
+
+
+
+
+			<div class="row">
+
+				<div class="col-md-8">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<!--<i class="fa fa-bar-chart-o"></i>-->
+								Claims (Medical and Rx Counts & Total Paid Amount)
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<div id="area-chart" class="chart-holder"></div>
+							<!--<div id="chart-4" style="height: 300px;"></div>	-->						
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div> <!-- /.col -->
+
+
+
+				<div class="col-md-4">
+
+					<div class="portlet portlet-plain">
+
+						<div class="portlet-header">
+
+							<h3>
+								<i class="fa fa-check-empty"></i>
+								Plain portlet
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div> <!-- /.col -->
+
+			</div> <!-- /.row -->
+
+
+
+
+
+			<div class="row">
+
+				<div class="col-md-4">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<!--<i class="fa fa-bar-chart-o"></i>-->
+								Place of Service
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<div id="donut-chart" class="chart-holder"></div>							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div>
+
+
+				<div class="col-md-4">
+
+					<div class="portlet portlet-plain">
+
+						<div class="portlet-header">
+
+							<h3>
+								<i class="fa fa-check-empty"></i>
+								Plain portlet
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div> <!-- /.col -->
+
+
+				<div class="col-md-4">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<!--<i class="fa fa-bar-chart-o"></i>-->
+								Gender Distribution
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<div id="donut-chart2" class="chart-holder"></div>							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div>
+
+
+			</div>
+
+
+
+			<div class="row">
+
+				<div class="col-md-6">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<!--<i class="fa fa-bar-chart-o"></i>-->
+								Medical Diagnostic Codes
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<div id="bar-chart" class="chart-holder"></div>							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div> <!-- /.col -->
+
+				<div class="col-md-6">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<!--<i class="fa fa-bar-chart-o"></i>-->
+								Trends by Company (or subgroup, or other, etc.)
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<div id="line-chart" class="chart-holder"></div>							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div> <!-- /.col -->
+
+			</div> <!-- /.row -->
+
+
+
+
+
+
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<i class="fa fa-table"></i>
+								Chronic Conditions
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">						
+
+							<div class="table-responsive">
+
+							<table 
+								class="table table-striped table-bordered table-hover table-highlight table-checkable" 
+								data-provide="datatable" 
+								data-display-rows="10"
+								data-info="true"
+								data-search="true"
+								data-length-change="true"
+								data-paginate="true"
+							>
+									<thead>
+										<tr>
+											<th class="checkbox-column">
+												<input type="checkbox" class="icheck-input">
+											</th>
+											<th data-filterable="true" data-sortable="true" data-direction="desc">Condition</th>
+											<th data-filterable="true" data-sortable="true">Paid Amount (Sum)</th>
+											<th data-filterable="true" data-sortable="true">Frequency</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="checkbox-column">
+												<input type="checkbox" class="icheck-input">
+											</td>
+											<td>Condition #1</td>
+											<td>$107,321</td>
+											<td>114</td>
+										</tr>
+										<tr >
+											<td class="checkbox-column">
+												<input type="checkbox" class="icheck-input">
+											</td>
+											<td>Condition #2</td>
+											<td>$87,500</td>
+											<td>92</td>
+										</tr>
+										<tr >
+											<td class="checkbox-column">
+												<input type="checkbox" class="icheck-input">
+											</td>
+											<td>Condition #3</td>
+											<td>$77,452</td>
+											<td>88</td>
+										</tr>
+									</tbody>
+								</table>
+							</div> <!-- /.table-responsive -->
+							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				
+
+				</div> <!-- /.col -->
+
+			</div> <!-- /.row -->
+
+
+
+
+
+
+
+
+			<div class="row">
+
+				<div class="col-md-6">
+
+					<div class="portlet portlet-plain">
+
+						<div class="portlet-header">
+
+							<h3>
+								<i class="fa fa-check-empty"></i>
+								Plain portlet
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div>
+
+				<div class="col-md-6">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<!--<i class="fa fa-bar-chart-o"></i>-->
+								Emergency Room VS Urgent Care
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<div id="bar-chart2" class="chart-holder"></div>							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div> <!-- /.col -->
+
+			</div>
+
+
+
+
+
+			<div class="row">
+
+
+				<div class="col-md-6">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<!--<i class="fa fa-bar-chart-o"></i>-->
+								Rx Brand (Generic VS Maintenance)
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<div id="bar-chart3" class="chart-holder"></div>							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div> <!-- /.col -->
+
+				<div class="col-md-6">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<!--<i class="fa fa-bar-chart-o"></i>-->
+								Therapeutic Class
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<div id="bar-chart4" class="chart-holder"></div>							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div> <!-- /.col -->
+
+			</div>
+
+
+
+			<div class="row">
+
+				<div class="col-md-6">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<!--<i class="fa fa-bar-chart-o"></i>-->
+								Top 10 Drugs
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<div id="bar-chart" class="chart-holder"></div>							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div> <!-- /.col -->
+
+				<div class="col-md-6">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<!--<i class="fa fa-bar-chart-o"></i>-->
+								Mail VS Retail (Pie)
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">
+
+							<div id="bar-chart" class="chart-holder"></div>							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				</div> <!-- /.col -->
+
+			</div>
+
+
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<div class="portlet">
+
+						<div class="portlet-header">
+
+							<h3>
+								<i class="fa fa-table"></i>
+								Large Claims
+							</h3>
+
+						</div> <!-- /.portlet-header -->
+
+						<div class="portlet-content">						
+
+							<div class="table-responsive">
+
+							<table 
+								class="table table-striped table-bordered table-hover table-highlight table-checkable" 
+								data-provide="datatable" 
+								data-display-rows="10"
+								data-info="true"
+								data-search="true"
+								data-length-change="true"
+								data-paginate="true"
+							>
+									<thead>
+										<tr>
+											<th class="checkbox-column">
+												<input type="checkbox" class="icheck-input">
+											</th>
+											<th data-filterable="true" data-sortable="true" data-direction="desc">Claim ID</th>
+											<th data-direction="asc" data-filterable="true" data-sortable="true">Paid Date</th>
+											<th data-filterable="true" data-sortable="true">Paid Amount</th>
+											<th data-filterable="true" class="hidden-xs hidden-sm">Diagnosis Code</th>
+											<th data-filterable="true" class="hidden-xs hidden-sm">Place of Service</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="checkbox-column">
+												<input type="checkbox" class="icheck-input">
+											</td>
+											<td>11111111</td>
+											<td>2016-03-11</td>
+											<td>506.88</td>
+											<td class="hidden-xs hidden-sm">v900</td>
+											<td class="hidden-xs hidden-sm">Medical Office</td>
+										</tr>
+										<tr >
+											<td class="checkbox-column">
+												<input type="checkbox" class="icheck-input">
+											</td>
+											<td>22222222</td>
+											<td>2016-01-22</td>
+											<td>27000</td>
+											<td class="hidden-xs hidden-sm">v7.3</td>
+											<td class="hidden-xs hidden-sm">Emergency</td>
+										</tr>
+										<tr >
+											<td class="checkbox-column">
+												<input type="checkbox" class="icheck-input">
+											</td>
+											<td>33333333</td>
+											<td>2016-02-22</td>
+											<td>94500</td>
+											<td class="hidden-xs hidden-sm">v700.9</td>
+											<td class="hidden-xs hidden-sm">Specialty</td>
+										</tr>
+									</tbody>
+								</table>
+							</div> <!-- /.table-responsive -->
+							
+
+						</div> <!-- /.portlet-content -->
+
+					</div> <!-- /.portlet -->
+
+				
+
+				</div> <!-- /.col -->
+
+			</div> <!-- /.row -->
+
+
+
+
+		</div> <!-- /#content-container -->
+		
+		
+	</div> <!-- #content -->
+
+	
+</div> <!-- #wrapper -->
+
+<footer id="footer">
+	<ul class="nav pull-right">
+		<li>
+			Copyright &copy; 2016, ScottIns
+		</li>
+	</ul>
+</footer>
+
+<script src="../static/js/libs/jquery-1.9.1.min.js"></script>
+<script src="../static/js/libs/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../static/js/libs/underscore.min.js"></script>
+<script src="../static/js/libs/bootstrap.min.js"></script>
+
+<script src="../static/js/libs/raphael-2.1.2.min.js"></script>
+<script src="../static/js/plugins/morris/morris.min.js"></script>
+
+<script src="../static/js/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../static/js/plugins/datatables/DT_bootstrap.js"></script>
+<script src="../static/js/plugins/tableCheckable/jquery.tableCheckable.js"></script>
+
+<script src="../static/js/charts/morris/bar.js"></script>
+<script src="../static/js/charts/morris/line.js"></script>
+<script src="../static/js/charts/morris/donut.js"></script>
+<script src="../static/js/charts/morris/area.js"></script>
+
+<script src="../static/js/App.js"></script>
+
+
+
+
+<!--
+The script below is data-driven based on the python code within the app.py
+
+It accepts 2 lists (one for lables and the other for values), it then passes that data to this HTML file.
+
+This HTML file loops thorugh the lables and values, generating a JSON file, such as below:
+
+		[
+            {label: 'Male', value: 51 },
+            {label: 'Female', value: 47 },
+            {label: 'Unknown', value: 2 },
+        ],
+-->
+<script>
+$(function () {
+    	
+    if (!$('#donut-chart2').length) { return false; }
+
+    donut2 ();
+
+    $(window).resize (App.debounce (donut2, 325));
+
+});
+
+function donut2 () {
+    $('#donut-chart2').empty ();
+
+    Morris.Donut({
+        element: 'donut-chart2',
+        data: [
+            {% for label,value in set %}
+                {
+                	label: "{{label}}",
+                    value: {{value}}
+                },
+            {% endfor %}
+ 
+         ],
+        colors: App.chartColors,
+        hideHover: true,
+        formatter: function (y) { return y + "%" }
+    });
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Define Chartkick Libraries -->
+<script src="http://www.google.com/jsapi"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../static/js/chartkick.js"></script>
+
+<script>
+  new Chartkick.LineChart("chart-4", [
+  		{"name":"Number of Claims","data":
+  			{"2013-02-10 00:00:00 -0800":78051,
+  			"2013-02-17 00:00:00 -0800":79345,
+  			"2013-02-24 00:00:00 -0800":81342,
+  			"2013-03-03 00:00:00 -0800":85380,
+  			"2013-03-10 00:00:00 -0800":87098,
+  			"2013-03-17 00:00:00 -0700":84908,
+  			"2013-03-24 00:00:00 -0700":83980,
+  			"2013-03-31 00:00:00 -0700":85798}
+  		},
+  		{"name":"Paid Claims","data":
+  			{"2013-02-10 00:00:00 -0800":5104324,
+  			"2013-02-17 00:00:00 -0800":5110342,
+  			"2013-02-24 00:00:00 -0800":5120989,
+  			"2013-03-03 00:00:00 -0800":5115098,
+  			"2013-03-10 00:00:00 -0800":5119234,
+  			"2013-03-17 00:00:00 -0700":5120324,
+  			"2013-03-24 00:00:00 -0700":5150989,
+  			"2013-03-31 00:00:00 -0700":5152333}
+  		}
+  		]);
+</script>
+
+
+
+
+
+</body>
+</html>

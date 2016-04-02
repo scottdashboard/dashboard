@@ -27,10 +27,17 @@ function bar () {
 }
 
 
+$(function () {
 
+	if (!$('#bar-chart2').length) { return false; }
 
+	bar2 ();
 
-function bar () {
+	$(window).resize (App.debounce (bar2, 325));
+
+});
+
+function bar2 () {
 	$('#bar-chart2').empty ();
 
 	Morris.Bar({
@@ -51,10 +58,18 @@ function bar () {
 
 
 
+$(function () {
+
+	if (!$('#bar-chart3').length) { return false; }
+
+	bar3 ();
+
+	$(window).resize (App.debounce (bar3, 325));
+
+});
 
 
-
-function bar () {
+function bar3 () {
 	$('#bar-chart3').empty ();
 
 	Morris.Bar({
@@ -75,9 +90,17 @@ function bar () {
 
 
 
+$(function () {
 
+	if (!$('#bar-chart4').length) { return false; }
 
-function bar () {
+	bar4 ();
+
+	$(window).resize (App.debounce (bar4, 325));
+
+});
+
+function bar4 () {
 	$('#bar-chart4').empty ();
 
 	Morris.Bar({

@@ -1,17 +1,19 @@
 ### Database Views:
 
-#### claims
+#### claims (We may want to break this into a 2 charts, medical claims and rx claims)
 
-* `period` (e.g. "2015 Q3")
-* `medical` (e.g. 2778)
-* `rx` (e.g. 3476)
-* `paid` (e.g. 2647)
+* `period` (e.g. "Jan 2016", Monthly trend wiht a 6 month lookback)
+* `medical_freq` (e.g. 2778)
+* `medical_paid` (e.g. $900,432)
+* `rx_freq` (e.g. 2647)
+* `rx_paid` (e.g. $683,242)
 
 
-### place_of_service
+### place_of_service (Let's turn this into a top 10 horizontal bar graph)
 
 * `label` (e.g. "Urgent Care")
-* `percent` (e.g. 25)
+* `frequency` (e.g. 25)
+* `paid` (e.g. $188,343)
 
 
 ### gender_distribution
@@ -20,61 +22,65 @@
 * `percent` (e.g. 40)
 
 
-### medical_diagnostic_codes
+### medical_diagnostic_codes (Let's turn this into a top 10 horizontal bar graph)
 
-* `year` (e.g. 2013)
-* `label` (e.g. "Series A")
+* `label` (e.g. "Pneumonia")
 * `value` (e.g. 65)
+* `paid` (e.g $123,324)
+
+
+### NOTE: I think we may be able to merge medical_diagnostic_codes and chronic_conditions
+###       for now, let's just make one chart called medical_diagnosis
 
 
 ### chronic_conditions
 
 * `condition` (e.g. "scoliosis")
-* `amount_paid` (e.g. 107321)
+* `amount_paid` (e.g. $107,321)
 * `frequency` (e.g. 114)
 
 
 ### emergency_room_vs_urgent_care
 
-* `year` (e.g. 2014)
-* `emergency_room` (e.g. 90)
-* `urgent_care` (e.g. 55)
+* `month_year` (e.g. Jan 2016, this will be a monthly trend with a 6 month lookback)
+* `emergency_room_paid` (e.g. $343,390)
+* `urgent_care_paid` (e.g. $345,455)
 
 
 ### generic_vs_maintenance
 
-* `year` (e.g. 2014)
-* `generic` (e.g. 23)
-* `maintenance` (e.g. 75)
+* `month_year` (e.g. Jan 2016, this will be a monthly trend wiht a 6 month lookback)
+* `generic_paid` (e.g. $323,343)
+* `maintenance_paid` (e.g. $343,375)
 
 
-### therapeutic_class
+### therapeutic_class (Top 10 horizontal bar chart)
 
-* `class` (e.g. 3)
-* `label` (e.g. "Therapeutic Class")
-* `value` (e.g. 75)
+* `label` (e.g. "Antibiotics")
+* `frequency` (e.g. 75)
+* `paid` (e.g. $134,342)
 
 
-### top_ten_drugs
+### top_ten_drugs (Top 10 Table)
 
-* `position` (e.g. 9)
-* `amount_paid` (e.g. 684300)
+* `label` (e.g. MELOXICAM)
+* `amount_paid` (e.g. $684,300)
 * `frequency` (e.g. 112)
 
 
-### mail_vs_retail
+### mail_vs_retail (Vertical Bar Chart)
 
-* `year` (e.g. 2012)
-* `mail` (e.g. 42)
-* `retail` (e.g. 58)
+* `month_year` (e.g. Jan 2016)
+* `mail_paid` (e.g. $343,342)
+* `retail_paid` (e.g. $233,258)
 
 
-### large_claims
+### large_claims (Top 10 Table for the current month)
 
-* `position` (e.g. 4)
-* `date_paid` (e.g. DateTime("July 4, 2013"))
-* `place_of_service` (e.g. "Medical Office")
-* `diagnosis_code` (e.g. "V900")
-* `medical_expense_total` (e.g. 504722)
-* `rx_total_paid` (e.g. 43859)
-* `grand_total` (e.g. 702036)
+* `date` (e.g. Jan 15, 2016)
+* `paid` (e.g. $333,234)
+* `place_of_service` (e.g. Medical Office)
+* `City` (e.g. Raleigh)
+* `State` (e.g. NC)
+* `dianosis` (e.g. Pneumonia)
+

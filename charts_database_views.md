@@ -51,7 +51,7 @@
 ### therapeutic_class
 
 * `class` (e.g. 3)
-* `label` (e.g. 'Therapeutic Class')
+* `label` (e.g. "Therapeutic Class")
 * `value` (e.g. 75)
 
 
@@ -72,7 +72,7 @@
 ### large_claims
 
 * `position` (e.g. 4)
-* `date_paid` (e.g. DateTime('July 4, 2013'))
+* `date_paid` (e.g. DateTime("July 4, 2013"))
 * `place_of_service` (e.g. "Medical Office")
 * `diagnosis_code` (e.g. "V900")
 * `medical_expense_total` (e.g. 504722)

@@ -29,8 +29,7 @@
 * `paid` (e.g $123,324)
 
 
-### NOTE: I think we may be able to merge medical_diagnostic_codes and chronic_conditions
-###       for now, let's just make one chart called medical_diagnosis
+##### NOTE: I think we may be able to merge medical_diagnostic_codes and chronic_conditions for now, let's just make one chart called medical_diagnosis
 
 
 ### chronic_conditions

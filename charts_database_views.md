@@ -4,7 +4,7 @@
 
 * `period` (e.g. "Jan 2016", Monthly trend wiht a 6 month lookback)
 * `medical_freq` (e.g. 2778)
-* `medical_paid` (e.g. $900,432)
+* `medical_paid` (e.g. 900432)
 * `rx_freq` (e.g. 2647)
 * `rx_paid` (e.g. 683242)
 

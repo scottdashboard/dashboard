@@ -1,25 +1,24 @@
 
-# Login as postgres user
-sudo -i -u postgres
+/******************************************/
+/***    Create Database and Connect     ***/
+/******************************************/
 
-# Create database
-createdb dashboard_db1
+/*** Create database ***/
+create database dashboard_db1;
 
-# Connect
+/***  Connect to DB  ***/
 \c dashboard_db1
 
-#######################################################
-#
-#   Create Table
-#
-#######################################################
+/******************************************/
+/***    Initialize and Create Tables    ***/
+/******************************************/
 CREATE TABLE GRP(
-    ID   INT NOT NULL SERIAL PRIMARY KEY,
+    ID   SERIAL PRIMARY KEY,
     NAME TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE CLAIMS_MED(
-    ID          INT NOT NULL SERIAL PRIMARY KEY,
+    ID          SERIAL PRIMARY KEY,
     GRP_ID      INT NOT NULL,
     PERIOD      TEXT,
     COUNT       INT,
@@ -28,7 +27,7 @@ CREATE TABLE CLAIMS_MED(
 );
 
 CREATE TABLE CLAIMS_RX(
-    ID          INT NOT NULL SERIAL PRIMARY KEY,
+    ID          SERIAL PRIMARY KEY,
     GRP_ID      INT NOT NULL,
     PERIOD      TEXT,
     COUNT       INT,
@@ -36,9 +35,9 @@ CREATE TABLE CLAIMS_RX(
     FOREIGN KEY (GRP_ID) REFERENCES GRP(ID)
 );
 
-# ADD PERCENT (AS PER JOSH ON 2016APR18)
+/*** ADD PERCENT (AS PER JOSH ON 2016APR18) ***/
 CREATE TABLE PLACE_OF_SERVICE(
-    ID          INT NOT NULL SERIAL PRIMARY KEY,
+    ID          SERIAL PRIMARY KEY,
     GRP_ID      INT NOT NULL,
     LABEL       TEXT,
     COUNT       INT,
@@ -47,27 +46,29 @@ CREATE TABLE PLACE_OF_SERVICE(
     FOREIGN KEY (GRP_ID) REFERENCES GRP(ID)
 );
 
-# ADD PERCENT (AS PER JOSH ON 2016APR18)
+/*** ADD PERCENT (AS PER JOSH ON 2016APR18) ***/
 CREATE TABLE GENDER(
-    ID          INT NOT NULL SERIAL PRIMARY KEY,
+    ID          SERIAL PRIMARY KEY,
     GRP_ID      INT NOT NULL,
     LABEL       TEXT,
     COUNT       INT,
     PERCENT     REAL,
     TOTAL_PAID  INT,
     FOREIGN KEY (GRP_ID) REFERENCES GRP(ID)
-);,
+);
 
 CREATE TABLE RELATIONSHIP(
-    ID          INT NOT NULL SERIAL PRIMARY KEY,
+    ID          SERIAL PRIMARY KEY,
     GRP_ID      INT NOT NULL,
     LABEL       TEXT,
+    COUNT       INT,
     PERCENT     REAL,
+    TOTAL_PAID  INT,
     FOREIGN KEY (GRP_ID) REFERENCES GRP(ID)
-);,
+);
 
 CREATE TABLE MED_DIAGNOSTIC_CODES(
-    ID          INT NOT NULL SERIAL PRIMARY KEY,
+    ID          SERIAL PRIMARY KEY,
     GRP_ID      INT NOT NULL,
     LABEL       TEXT,
     COUNT       INT,
@@ -76,7 +77,7 @@ CREATE TABLE MED_DIAGNOSTIC_CODES(
 );
 
 CREATE TABLE CHRONIC_CONDITIONS(
-    ID          INT NOT NULL SERIAL PRIMARY KEY,
+    ID          SERIAL PRIMARY KEY,
     GRP_ID      INT NOT NULL,
     LABEL       TEXT,
     COUNT       INT,
@@ -85,7 +86,7 @@ CREATE TABLE CHRONIC_CONDITIONS(
 );
 
 CREATE TABLE ER_VS_UC(
-    ID          INT NOT NULL SERIAL PRIMARY KEY,
+    ID          SERIAL PRIMARY KEY,
     GRP_ID      INT NOT NULL,
     PERIOD      TEXT,
     ER_PAID     INT,
@@ -93,10 +94,10 @@ CREATE TABLE ER_VS_UC(
     FOREIGN KEY (GRP_ID) REFERENCES GRP(ID)
 );
 
-# ADD NEW CATEGORY CALLED SPECIALTY AND CHANGE MAINT TO "BRAND" (AS PER JOSH ON 2016APR18)
-# IF NO SPECIALTY, THEN WE CAN GROUP THIS INTO "BRAND" (AS PER JOSH ON 2016APR18)
+/*** ADD NEW CATEGORY CALLED SPECIALTY AND CHANGE MAINT TO "BRAND" (AS PER JOSH ON 2016APR18) ***/
+/*** IF NO SPECIALTY, THEN WE CAN GROUP THIS INTO "BRAND" (AS PER JOSH ON 2016APR18)          ***/
 CREATE TABLE GENERIC_VS_MAINT(
-    ID              INT NOT NULL SERIAL PRIMARY KEY,
+    ID              SERIAL PRIMARY KEY,
     GRP_ID          INT NOT NULL,
     PERIOD          TEXT,
     GENERIC_PAID    INT,
@@ -106,7 +107,7 @@ CREATE TABLE GENERIC_VS_MAINT(
 );
 
 CREATE TABLE THERAPEUTIC_CLASS(
-    ID          INT NOT NULL SERIAL PRIMARY KEY,
+    ID          SERIAL PRIMARY KEY,
     GRP_ID      INT NOT NULL,
     LABEL       TEXT,
     COUNT       INT,
@@ -115,7 +116,7 @@ CREATE TABLE THERAPEUTIC_CLASS(
 );
 
 CREATE TABLE DRUGS(
-    ID          INT NOT NULL SERIAL PRIMARY KEY,
+    ID          SERIAL PRIMARY KEY,
     GRP_ID      INT NOT NULL,
     LABEL       TEXT,
     COUNT       INT,
@@ -124,7 +125,7 @@ CREATE TABLE DRUGS(
 );
 
 CREATE TABLE MAIL_VS_RETAIL(
-    ID              INT NOT NULL SERIAL PRIMARY KEY,
+    ID              SERIAL PRIMARY KEY,
     GRP_ID          INT NOT NULL,
     PERIOD          TEXT,
     MAIL_PAID       INT,
@@ -132,11 +133,11 @@ CREATE TABLE MAIL_VS_RETAIL(
     FOREIGN KEY (GRP_ID) REFERENCES GRP(ID)
 );
 
-# THIS GRAPH SHOULD BE THE TOP X MEMBERS THAT SUBMIT THE HIGHEST CLAIMS (SHOW MEDICAL AND RX) 
-# IN THE LATEST MONTH AND THE PAST MONTH
-# DIAGNOSS MEDICAL$(12-MONTH PERIOD) RX$(12-MONTH PERIOD) TOTAL_COST(MED+RX) MOST_RECENT_MONTH_SPEND$
+/*** THIS GRAPH SHOULD BE THE TOP X MEMBERS THAT SUBMIT THE HIGHEST CLAIMS (SHOW MEDICAL AND RX)            ***/
+/*** IN THE LATEST MONTH AND THE PAST MONTH                                                                 ***/
+/*** DIAGNOSS MEDICAL$(12-MONTH PERIOD) RX$(12-MONTH PERIOD) TOTAL_COST(MED+RX) MOST_RECENT_MONTH_SPEND$    ***/
 CREATE TABLE LARGE_CLAIMS(
-    ID                      INT NOT NULL SERIAL PRIMARY KEY,
+    ID                      SERIAL PRIMARY KEY,
     GRP_ID                  INT NOT NULL,
     DIAGNOSIS               TEXT,
     PAID_MEDICAL            INT,
@@ -146,21 +147,15 @@ CREATE TABLE LARGE_CLAIMS(
     FOREIGN KEY (GRP_ID) REFERENCES GRP(ID)
 );
 
-#######################################################
-#
-#   List Tables
-#
-#######################################################
+/*** List all Tables within DB ***/
 \dt
 
 
-#######################################################
-#
-#   Populate Tables
-#
-#######################################################
-INSERT INTO GRP(ID, NAME)
-    values  (1, 'Default')
+/******************************************/
+/***   Populate Tables with Data        ***/
+/******************************************/
+INSERT INTO GRP(NAME)
+    values  ('Centra')
             ;
 
 INSERT INTO CLAIMS_MED(GRP_ID, PERIOD, COUNT, TOTAL_PAID)
@@ -198,11 +193,11 @@ INSERT INTO GENDER(GRP_ID, LABEL, COUNT, PERCENT, TOTAL_PAID)
             (1,'M',175822,47,16056652)
             ;
 
-INSERT INTO RELATIONSHIP(GRP_ID, LABEL, COUNT, TOTAL_PAID)
-    values  (1,'EMPLOYEE',346344,15515694),
-            (1,'SPOUSE',275822,8056652),
-            (1,'CHILD',165822,2056652),
-            (1,'OTHER',115822,1056652)
+INSERT INTO RELATIONSHIP(GRP_ID, LABEL, COUNT, PERCENT, TOTAL_PAID)
+    values  (1,'EMPLOYEE',346344,61,15515694),
+            (1,'SPOUSE',275822,21,8056652),
+            (1,'CHILD',165822,11,2056652),
+            (1,'OTHER',115822,7,1056652)
             ;
 
 INSERT INTO MED_DIAGNOSTIC_CODES(GRP_ID, LABEL, COUNT, TOTAL_PAID)
@@ -238,7 +233,7 @@ INSERT INTO ER_VS_UC(GRP_ID, PERIOD, ER_PAID, UC_PAID)
             (1,'APR 2016',13789,21232)
             ;
 
-INSERT INTO GENERIC_VS_MAINT(GRP_ID, PERIOD, GENERIC_PAID, MAINT_PAID, SPECIALTY_PAID)
+INSERT INTO GENERIC_VS_MAINT(GRP_ID, PERIOD, GENERIC_PAID, BRAND_PAID, SPECIALTY_PAID)
     values  (1,'NOV 2015',11990,23201,14012),
             (1,'DEC 2015',12433,22987,11021),
             (1,'JAN 2016',13990,22435,12231),
@@ -280,7 +275,7 @@ INSERT INTO MAIL_VS_RETAIL(GRP_ID, PERIOD, MAIL_PAID, RETAIL_PAID)
             (1,'APR 2016',13789,21232)
             ;
 
-INSERT INTO LARGE_CLAIMS(GRP_ID, PERIOD, PAID, PLACE_OF_SERVICE, CITY, STATE, ZIPCODE, DIAGNOSIS)
+INSERT INTO LARGE_CLAIMS(GRP_ID, DIAGNOSIS, PAID_MEDICAL, PAID_RX, TOTAL_PAID, TOTAL_PAID_THIS_MONTH)
     values  (1,'IMMUNOTHERAPY ENCOUNTER',133517,50000,183517,3454),
             (1,'OTH SEQUELA, CHR LIV DIS',122050,20000,142050,45343),
             (1,'MYELODYSPLASTIC SYND NOS',89417,10000,99417,12323),
@@ -294,8 +289,8 @@ INSERT INTO LARGE_CLAIMS(GRP_ID, PERIOD, PAID, PLACE_OF_SERVICE, CITY, STATE, ZI
             ;
 
 
-# Exit
-\q
+/*** Exit ***/
+/*** \q   ***/
 
 
-#ZEND
+/*ZEND*/
